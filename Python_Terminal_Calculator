@@ -1,0 +1,46 @@
+while True:    
+    while True: 
+        try:
+            num_1 = float(input("Digite o primeiro número: "))
+            num_2 = float(input("Digite o segundo número: "))
+            break
+        except:
+            print("Digite números válidos!")
+
+    while True:
+        try:
+            operador = input("Digite o operador (+, -, *, /, **): ")
+            if len(operador) > 1 and operador != "**": print("Digite apenas um operador!"); continue
+            if operador == "+" or operador == "-" or operador == "*" or operador == "/" or operador == "**": break
+        except:
+            print("Digite um operador válido!")
+
+    resultado = None
+
+    if operador == "+":
+        resultado = num_1 + num_2
+    elif operador == "-":
+        resultado = num_1 - num_2
+    elif operador == "*":
+        resultado = num_1 * num_2
+    elif operador == "/":
+        resultado = num_1 / num_2
+    elif operador == "**":
+        resultado = num_1 ** num_2
+
+    print(f"Resultado: {resultado}")
+    sair = None
+
+    while True:
+        sair = input("Sair [S] Repetir [R]").lower()
+        if sair.startswith('s') or sair.startswith('r'):
+            break
+        print("Digite uma resposta válida!")
+    
+    print("-----------------------------------")
+    if sair.startswith('s'):
+        break
+    if sair.startswith('r'):
+        continue
+
+
